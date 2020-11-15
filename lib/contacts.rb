@@ -1,5 +1,8 @@
 require 'pry'
-
+# Author: Martinique Dolce
+# Course: Flatiron School 2020, November 9 - 20201, April 2021
+# Contact: me@martidolce.com | https://modis.martidolce.com
+#
   # This is the array we will be passing into the remove_strawberry method
   # contacts = {
   #   "Jon Snow" => {
@@ -13,7 +16,15 @@ require 'pry'
   #     favorite_ice_cream_flavors: ["strawberry", "cookie dough", "mint chip"]
   #   }
   # }
-  
-def remove_strawberry(contacts)
 
+def remove_strawberry(contacts)
+	contacts.each do |person, contact_details_hash|
+		if person == "Freddy Mercury"
+			contact_details_hash.each do |attribute, data|
+				if attribute == :favorite_ice_cream_flavors
+					data.delete_if {|ice_cream| ice_cream == "strawberry"}
+				end
+			end
+		end
+	end
 end
